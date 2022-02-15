@@ -12,12 +12,8 @@ const App = () => (
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
-          <section className="container">
-            <Routes>
-              <Route path="/register" element={<Register />} />
-              <Route path="/login" element={<Login />} />
-            </Routes>
-          </section>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </Fragment>
     </Router>
