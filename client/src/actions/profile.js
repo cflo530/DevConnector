@@ -24,7 +24,7 @@ export const getCurrentProfile = () => async dispatch => {
 };
 
 // Create or Update a Profile
-export const createProfile = (formData, history, edit = false) => async dispatch => {
+export const createProfile = (formData, navigate, edit = false) => async dispatch => {
     try {
         const config = {
             headers: {
@@ -39,10 +39,10 @@ export const createProfile = (formData, history, edit = false) => async dispatch
             payload: res.data
         });
 
-        dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created'));
+        dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
 
         if(!edit) {
-            history.push('/dashboard');
+            navigate.push('/dashboard');
         }
 
     } catch (err) {
